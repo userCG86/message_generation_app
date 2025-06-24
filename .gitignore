@@ -1,0 +1,6 @@
+# connection secrets
+.streamlit/secrets.toml
+
+# internal files
+__pycache__/
+.ipynb_checkpoints/

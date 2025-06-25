@@ -61,6 +61,6 @@ def learning_message(name, username, password):
     
     I'm writing to provide you with access to LinkedIn Learning during the bootcamp. Access is granted until the end of your course.
 
-    To gain access to LinkedIn Learning, go to [this link](https://ecampus50.wbstraining.de/) and select "Manuell".
+    Start by going to [this link](https://ecampus50.wbstraining.de/). Follow the steps in [this video](https://drive.google.com/file/d/1C3rRbKxrIJhw21O61N0F5isH0FwnX6mU/view?usp=drive_link) to complete the login and access LinkedIn Learning.
 
     Your username is "{username}" and your password is "{password}"."""

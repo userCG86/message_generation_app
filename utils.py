@@ -15,7 +15,7 @@ def set_exam_dates(days):
     if days == "three":
         last_date = skip_weekends(next_date+timedelta(days=1))
         exam_dates[-1] = last_date
-    # st.write(exam_dates)
+    
     try:
         test_dates = [date_.strftime("%d. %B, %Y") for date_ in exam_dates]
         if next_date.year == last_date.year:

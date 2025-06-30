@@ -55,30 +55,18 @@ def generate_messages(df, row, keyword):
     }
     
     if row >= df.shape[0]:
-        st.write("You're all done!")
-        return 0
+        return "You're all done!"
         
     else:
-        st.text(
-            voucher_message(df.iloc[row, 0].split()[0], df.iloc[row, 1], keyword_dict[keyword])
-        )
-        return 0
+        return voucher_message(df.iloc[row, 0].split()[0], df.iloc[row, 1], keyword_dict[keyword])
+        
 
 def voucher_message(name, voucher, details):
     exam_dates = set_exam_dates(details["days"])
-    return f"""
-    :wave: Hey {name},
+    return f""":wave: Hey {name},
         
     I'm writing to give you your voucher to [sign up for the {details["name"]} exam]({details["link"]}). Your voucher number is *{voucher}*. Your voucher includes _{details["retries"]}_.
         
     We've set aside {details["days"]} days for taking the exam during the course: *{", ".join(exam_dates[0:-1])} and {exam_dates[-1]}*. Take your exam by these dates, while the knowledge is still fresh in your mind. :v:
         
     :shamrock: Good luck!"""
-    # return f"""
-    # Hey {name},
-        
-    # I'm writing to give you your voucher to [sign up for the {details["name"]} exam]({details["link"]}). Your voucher number is **{voucher}**. Your voucher includes *{details["retries"]}*.
-        
-    # We've set aside {details["days"]} days for taking the exam during the course: **{", ".join(exam_dates[0:-1])} and {exam_dates[-1]}**. Take your exam by these dates, while the knowledge is still fresh in your mind.
-        
-    # Good luck!"""

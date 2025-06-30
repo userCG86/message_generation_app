@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from streamlit_gsheets import GSheetsConnection
+from st_copy import copy_button
 from data_read import fetch_data
 from utils import *
 
@@ -21,17 +22,21 @@ if purpose:
         df = fetch_data(spreadsheet, keyword)
         st.markdown("---")
         
-        generate_messages(df, st.session_state["row"], keyword)
+        message_text = generate_messages(df, st.session_state["row"], keyword)
+        st.text(message_text)
         
-        col1, col2 = st.columns(2)
+        col1, col2, col3 = st.columns(3)
         with col1:
             if st.session_state["row"] > 0:
-                if st.button("Previous message"):
+                if st.button("Previous message", key="previous"):
                     st.session_state["row"] -= 1
                     st.rerun()
         with col2:
+            copy_button(message_text) 
+                
+        with col3:
             if st.session_state["row"] < df.shape[0]:
-                if st.button("Next message"):
+                if st.button("Next message", key="next"):
                     st.session_state["row"] += 1
                     st.rerun()
         

@@ -69,4 +69,4 @@ def voucher_message(name, voucher, details):
         
     We've set aside {details["days"]} days for taking the exam during the course: *{", ".join(exam_dates[0:-1])} and {exam_dates[-1]}*. Take your exam by these dates, while the knowledge is still fresh in your mind. :v:
         
-    :shamrock: Good luck!"""
+    Good luck! :shamrock:"""
